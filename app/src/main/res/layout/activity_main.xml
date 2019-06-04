@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layout_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:text="开始"/>
+
+        <Button
+            android:id="@+id/btn_complete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:text="完成"/>
+
+        <Button
+            android:id="@+id/btn_dismiss"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:text="消失"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_width"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/layout_buttons"
+        android:layout_alignParentRight="true"
+        android:text="设置线条粗细"/>
+
+    <EditText
+        android:id="@+id/et_width"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/btn_width"
+        android:layout_toLeftOf="@id/btn_color"
+        android:hint="线条粗细：dp"
+        android:inputType="number"
+        android:text="4"/>
+
+    <Button
+        android:id="@+id/btn_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_width"
+        android:layout_alignParentRight="true"
+        android:text="设置线条颜色"/>
+
+    <EditText
+        android:id="@+id/et_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/btn_color"
+        android:layout_toLeftOf="@id/btn_color"
+        android:hint="线条颜色：#XXXXXXXX"
+        android:text="#ff000000"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_color">
+
+        <com.jimmysun.loadcompleteview.LoadCompleteView
+            android:id="@+id/load_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:color="#ff000000"
+            app:strokeWidth="4dp"/>
+    </FrameLayout>
+</RelativeLayout>
